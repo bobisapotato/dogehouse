@@ -8,8 +8,10 @@ import { currentRoomAtom, meAtom, myCurrentRoomInfoAtom } from "../atoms";
 import { Backbar } from "../components/Backbar";
 import { BottomVoiceControl } from "../components/BottomVoiceControl";
 import { CircleButton } from "../components/CircleButton";
+import { modalConfirm } from "../components/ConfirmModal";
 import { ProfileButton } from "../components/ProfileButton";
 import { ProfileModal } from "../components/ProfileModal";
+import { modalPrompt } from "../components/PromptModal";
 import { RoomUserNode } from "../components/RoomUserNode";
 import { Wrapper } from "../components/Wrapper";
 import { Codicon } from "../svgs/Codicon";
@@ -88,14 +90,25 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
         profile={profile}
       />
       <Backbar>
-        <div
+        <button
+          disabled={!iAmCreator}
+          onClick={() => {
+            modalPrompt("Edit Room Name", (name) => {
+              if (name) {
+                wsend({ op: "edit_room_name", d: { name } });
+              }
+            });
+          }}
           style={{
             fontSize: "calc(var(--vscode-font-size)*1.3)",
+            display: "block",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
-          className={tw`flex-1 text-center flex items-center justify-center font-semibold`}
+          className={tw`flex-1 text-center flex items-center justify-center text-2xl`}
         >
           {room.name.slice(0, 50)}
-        </div>
+        </button>
         <ProfileButton />
       </Backbar>
       <Wrapper>
@@ -129,17 +142,18 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
             />
           ))}
           {!iCanSpeak && me && !(me.id in room.raiseHandMap) ? (
-            <CircleButton
-              size={70}
-              onClick={() => {
-                const y = window.confirm("Would you like to ask to speak?");
-                if (y) {
-                  wsend({ op: "ask_to_speak", d: {} });
-                }
-              }}
-            >
-              <Codicon width={36} height={36} name="megaphone" />
-            </CircleButton>
+            <div className={tw`flex flex-col items-center`}>
+              <CircleButton
+                size={70}
+                onClick={() => {
+                  modalConfirm("Would you like to ask to speak?", () => {
+                    wsend({ op: "ask_to_speak", d: {} });
+                  });
+                }}
+              >
+                <Codicon width={36} height={36} name="megaphone" />
+              </CircleButton>
+            </div>
           ) : null}
           {unansweredHands.length ? (
             <div
