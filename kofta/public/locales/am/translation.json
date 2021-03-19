@@ -30,18 +30,14 @@
   },
   "pages": {
     "_comment": "Respective Page UI Internationalization Strings",
-    "banUser": {
-      "ban": "አግድ"
-    },
+    "banUser": { "ban": "አግድ" },
     "followingOnlineList": {
       "listHeader": "የግል ክፍል ውስጥ ናቸው እና የሚከተሉ ተጠቃሚዎች ዝርዝር፡፡",
       "currentRoom": "በአሁኑ ጊዜ ውስጥ:",
       "startPrivateRoom": "ከእነሱ ጋር አንድ የግል ክፍል መጀመር"
     },
     "followList": {},
-    "home": {
-      "createRoom": "ክፍል ፍጠር"
-    },
+    "home": { "createRoom": "ክፍል ፍጠር", "refresh": "Refresh" },
     "inviteList": {
       "roomGone": "ክፍሉ ጠፋ, ተመለስ",
       "shareRoomLink": "የክፍሉን ሊንክ አጋራ",
@@ -77,24 +73,22 @@
       "requestingToSpeak": "ለመናገር ፈቃድ ጠይቅ",
       "listeners": "አድማጮች"
     },
-    "searchUser": {
-      "search": "ፈልግ ..."
-    },
-    "soundEffectSettings": {
-      "header": "ድምፆች"
-    },
+    "searchUser": { "search": "ፈልግ ..." },
+    "soundEffectSettings": { "header": "ድምፆች" },
     "viewUser": {
       "editProfile": "መገለጫ ቀይር",
       "followsYou": "እርስዎን ይከተላል",
       "folowers": "ተከታዮች",
-      "following": "የሚከተሉት"
+      "following": "የሚከተሉት",
+      "followers": "followers"
     },
     "voiceSettings": {
       "header": "የድምፅ ቅንብሮች",
       "mic": "ማይክሮፎን:",
       "permissionError": "ምንም የስቴሪዮ አገኘ, ወይ አንዳቸውም ሲሰካ ወይም በዚህ ድር ጣቢያ ፍቃድ የተሰጠው አልቻሉም፡፡",
       "refesh": "አድስ ማይክሮፎኑን ዝርዝር",
-      "volume": "ድምጽ:"
+      "volume": "ድምጽ:",
+      "refresh": "refresh mic list"
     }
   },
   "components": {
@@ -118,17 +112,15 @@
       "makeRoomPublicBtn": "ክፍሉን ልሁሉም ክፍት አድርግ!",
       "settings": "ቅንብሮች",
       "speaker": "ተናጋሪ",
-      "listener": "አድማጭ"
+      "listener": "አድማጭ",
+      "chat": "Chat"
     },
     "deviceNotSupported": {
       "notSupported": "የእርስዎ መሣሪያ በአሁኑ ጊዜ አይደገፍም፡፡ ቸግሩን",
       "linkText": "በ GitHub ላይ ተናገሩ",
       "addSupport": "እኔም ለመሣሪያዎ ድጋፍ ለማከል አሞክራልሁ፡፡"
     },
-    "inviteButton": {
-      "invited": "ተጋብዘዋል",
-      "inviteToRoom": "ወደ ክፍል ጋብዝ"
-    },
+    "inviteButton": { "invited": "ተጋብዘዋል", "inviteToRoom": "ወደ ክፍል ጋብዝ" },
     "micPermissionBanner": {
       "permissionDenied": "ፈቃድ መተግበሪያው ማይክሮፎኑን ለመድረስ እየሞከረ ካደ (እርስዎ የአሳሽ ቅንብሮች ወደ ሂድ እና ገጹን ዳግም መጫን ሊኖርብዎ ይችላል)",
       "dismiss": "አሰናብት",
@@ -140,12 +132,8 @@
       "toggleMuteKeybind": "ድምጸ ማጥፍያ/ማብርያ ቁልፍ",
       "togglePushToTalkKeybind": "ተጭኖ ማውሪያ ማጥፍያ/ማብርያ ቁልፍ"
     },
-    "userVolumeSlider": {
-      "noAudioMessage": "በሆነ ምክንያት ምንም ድምጽ ተጠቃሚ የለም"
-    },
-    "addToCalendar": {
-      "add": "ወደ ቀን መቁጠሪያ ጨምር"
-    },
+    "userVolumeSlider": { "noAudioMessage": "በሆነ ምክንያት ምንም ድምጽ ተጠቃሚ የለም" },
+    "addToCalendar": { "add": "ወደ ቀን መቁጠሪያ ጨምር" },
     "wsKilled": {
       "description": "WebSocket በአገልጋዩ ተቋረጠ. ሌላ ትር ውስጥ ያለውን ድረ ገጽ በመክፈት የተከሰተ ይሆናል፡፡",
       "reconnect": "መልሰህ ተገናኝ"
@@ -187,7 +175,8 @@
         "banFromChat": "ከ ውይይት አግድ",
         "banFromRoom": "ከ ክፍል ያግዱ",
         "goBackToListener": "አዳማጭ ይመለሱ",
-        "deleteMessage": "ይህን መልዕክት ሰርዝ"
+        "deleteMessage": "ይህን መልዕክት ሰርዝ",
+        "makeRoomCreator": "make room admin"
       },
       "roomSettingsModal": {
         "requirePermission": "መናገር ፈቃድ ይጠይቃል",
@@ -208,7 +197,8 @@
       "modal": {
         "needsFuture": "ፍላጎቶች ወደፊት መሆን አለባቸው",
         "roomName": "የክፍል ስም",
-        "minLength": "ደቂቃ ርዝመት 2"
+        "minLength": "ደቂቃ ርዝመት 2",
+        "roomDescription": "Description"
       }
     },
     "roomChat": {
@@ -223,6 +213,18 @@
       "whisper": "ተንሸካሾክ",
       "welcomeMessage": "ለውይይት እንኳን ደህና መጡ!",
       "roomDescription": "ክፍል መግለጫ"
+    },
+    "roomStatus": {
+      "fuelingRocket": "Fueling rocket",
+      "takingOff": "Taking off",
+      "inSpace": "In space",
+      "approachingMoon": "Approaching moon",
+      "lunarDoge": "Lunar doge",
+      "approachingSun": "Approaching sun",
+      "solarDoge": "Solar doge",
+      "approachingGalaxy": "Approaching galaxy",
+      "galacticDoge": "Galactic Doge",
+      "spottedLife": "Planet with life spotted"
     }
   }
 }

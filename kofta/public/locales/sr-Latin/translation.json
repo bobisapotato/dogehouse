@@ -37,7 +37,7 @@
       "startPrivateRoom": "započni privatnu sobu sa njima"
     },
     "followList": {},
-    "home": { "createRoom": "Kreiraj sobu" },
+    "home": { "createRoom": "Kreiraj sobu", "refresh": "Refresh" },
     "inviteList": {
       "roomGone": "soba je nestala, vrati me nazad",
       "shareRoomLink": "podeli vezu do sobe",
@@ -110,7 +110,8 @@
       "makeRoomPublicBtn": "Učini sobu javnom!",
       "settings": "Podešavanja",
       "speaker": "Govornik",
-      "listener": "Slušalac"
+      "listener": "Slušalac",
+      "chat": "Ćaskanje"
     },
     "deviceNotSupported": {
       "notSupported": "Vaš uređaj ternutno nije podržan. Možete stvoriti",
@@ -174,7 +175,8 @@
         "banFromChat": "zabrani pristup ćaskanju",
         "banFromRoom": "zabrani pristup sobi",
         "goBackToListener": "vrati se slušaocu",
-        "deleteMessage": "obriši ovu poruku"
+        "deleteMessage": "obriši ovu poruku",
+        "makeRoomCreator": "make room admin"
       },
       "roomSettingsModal": {
         "requirePermission": "zatraži dozvolu za govor",
@@ -195,7 +197,8 @@
       "modal": {
         "needsFuture": "treba da bude u budućnosti",
         "roomName": "naziv sobe",
-        "minLength": "minimalna dužina 2"
+        "minLength": "minimalna dužina 2",
+        "roomDescription": "Description"
       }
     },
     "roomChat": {
@@ -210,6 +213,18 @@
       "whisper": "šapći",
       "welcomeMessage": "Dobrodošli u ćaskanje!",
       "roomDescription": "opis sobe"
+    },
+    "roomStatus": {
+      "fuelingRocket": "Fueling rocket",
+      "takingOff": "Taking off",
+      "inSpace": "In space",
+      "approachingMoon": "Approaching moon",
+      "lunarDoge": "Lunar doge",
+      "approachingSun": "Approaching sun",
+      "solarDoge": "Solar doge",
+      "approachingGalaxy": "Approaching galaxy",
+      "galacticDoge": "Galactic Doge",
+      "spottedLife": "Planet with life spotted"
     }
   }
 }

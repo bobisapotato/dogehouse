@@ -1,12 +1,11 @@
 import normalizeUrl from "normalize-url";
 import React, { useEffect, useRef, useState } from "react";
-import ReactTooltip from "react-tooltip";
 import { useCurrentRoomStore } from "../../../webrtc/stores/useCurrentRoomStore";
 import { useCurrentRoomInfo } from "../../atoms";
 import { Avatar } from "../../components/Avatar";
-import { dateFormat } from "../../utils/dateFormat";
 import { useMeQuery } from "../../utils/useMeQuery";
 import { useTypeSafeTranslation } from "../../utils/useTypeSafeTranslation";
+import { emoteMap } from "./EmoteData";
 import { ProfileModalFetcher } from "./ProfileModalFetcher";
 import { useRoomChatMentionStore } from "./useRoomChatMentionStore";
 import { RoomChatMessage, useRoomChatStore } from "./useRoomChatStore";
@@ -69,7 +68,6 @@ export const RoomChatList: React.FC<ChatListProps> = ({}) => {
           <div
             className="flex flex-col flex-shrink-0"
             key={m.id}
-            data-tip={dateFormat(m.sentAt)}
           >
             {/* Whisper label */}
             {m.isWhisper ? (
@@ -126,6 +124,17 @@ export const RoomChatList: React.FC<ChatListProps> = ({}) => {
                             {v}{" "}
                           </span>
                         );
+                      case "emote":
+                        return emoteMap[v] ? (
+                          <img
+                            key={i}
+                            className="inline"
+                            alt={v}
+                            src={emoteMap[v]}
+                          />
+                        ) : (
+                          ":" + v + ":"
+                        );
 
                       case "mention":
                         return (
@@ -159,18 +168,18 @@ export const RoomChatList: React.FC<ChatListProps> = ({}) => {
                             {normalizeUrl(v, { stripProtocol: true })}{" "}
                           </a>
                         );
-                        case "block":
-                          return (
-                            <span key={i}>
-                              <span
-                                className={
-                                  "bg-simple-gray-33 rounded whitespace-pre-wrap font-mono"
-                                }
-                              >
-                                {v}
-                              </span>{" "}
-                            </span>
-                          );
+                      case "block":
+                        return (
+                          <span key={i}>
+                            <span
+                              className={
+                                "bg-simple-gray-33 rounded whitespace-pre-wrap font-mono"
+                              }
+                            >
+                              {v}
+                            </span>{" "}
+                          </span>
+                        );
                       default:
                         return null;
                     }
@@ -178,8 +187,6 @@ export const RoomChatList: React.FC<ChatListProps> = ({}) => {
                 )}
               </div>
             </div>
-
-            <ReactTooltip />
           </div>
         ))}
       {messages.length === 0 ? (

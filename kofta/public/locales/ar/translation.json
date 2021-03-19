@@ -37,7 +37,7 @@
       "startPrivateRoom": "ابدأ غرفة خاصة معهم"
     },
     "followList": {},
-    "home": { "createRoom": "ابدأ غرفة" },
+    "home": { "createRoom": "ابدأ غرفة", "refresh": "Refresh" },
     "inviteList": {
       "roomGone": "انتهت الغرفة، عد إلى الوراء",
       "shareRoomLink": "شارك رابط الغرفة",
@@ -110,7 +110,8 @@
       "makeRoomPublicBtn": "اجعل الغرفة عامة!",
       "settings": "الإعدادات",
       "speaker": "متحدث",
-      "listener": "مستمع"
+      "listener": "مستمع",
+      "chat": "Chat"
     },
     "deviceNotSupported": {
       "notSupported": "جهازك غير مدعوم حاليا. يمكنك إنشاء",
@@ -172,7 +173,8 @@
         "banFromChat": "حظر من الماحدثة",
         "banFromRoom": "حظر من الغرفة",
         "goBackToListener": "إرجع إلى مستمع",
-        "deleteMessage": "حذف الرسالة"
+        "deleteMessage": "حذف الرسالة",
+        "makeRoomCreator": "make room admin"
       },
       "roomSettingsModal": {
         "requirePermission": "جعل التحدث بطلب فقط",
@@ -193,7 +195,8 @@
       "modal": {
         "needsFuture": "يجب أن تكون في المستقبل",
         "roomName": "اسم الغرفة",
-        "minLength": "أقل طول 2"
+        "minLength": "أقل طول 2",
+        "roomDescription": "Description"
       }
     },
     "roomChat": {
@@ -208,6 +211,18 @@
       "whisper": "اهمس",
       "welcomeMessage": "مرحبا بك في المحادثة!",
       "roomDescription": "وصف الغرفة"
+    },
+    "roomStatus": {
+      "fuelingRocket": "عبي الصاروخ بنزين",
+      "takingOff": "تقلع",
+      "inSpace": "بالفضاء",
+      "approachingMoon": "الاقتراب من القمر",
+      "lunarDoge": "Lunar doge",
+      "approachingSun": "الاقتراب من الشمس",
+      "solarDoge": "Solar doge",
+      "approachingGalaxy": "الاقتراب من المجره",
+      "galacticDoge": "Galactic Doge",
+      "spottedLife": "اكتشاف كوكب فيه حياه"
     }
   }
 }

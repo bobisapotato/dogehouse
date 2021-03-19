@@ -30,18 +30,14 @@
   },
   "pages": {
     "_comment": "Respective Page UI Internationalization Strings",
-    "banUser": {
-      "ban": "bänni"
-    },
+    "banUser": { "ban": "bänni" },
     "followingOnlineList": {
       "listHeader": "Loend kasutajaid, kes ei ole privaatses ruumis ja jälgid neid.",
       "currentRoom": "praegu sees:",
       "startPrivateRoom": "loo privaatne ruum nendega"
     },
     "followList": {},
-    "home": {
-      "createRoom": "Loo ruum"
-    },
+    "home": { "createRoom": "Loo ruum", "refresh": "Refresh" },
     "inviteList": {
       "roomGone": "ruum läinud, mine tagasi",
       "shareRoomLink": "jaga linki ruumi",
@@ -114,17 +110,15 @@
       "makeRoomPublicBtn": "Tee ruum avalikuks!",
       "settings": "Seaded",
       "speaker": "Kõneleja",
-      "listener": "Kuulaja"
+      "listener": "Kuulaja",
+      "chat": "Chat"
     },
     "deviceNotSupported": {
       "notSupported": "Teie seadet ei toetata praegu. Te saate teha",
       "linkText": "GitHub'is veateate",
       "addSupport": "ning üritame lisada tuge teie seadmele."
     },
-    "inviteButton": {
-      "invited": "kutsutud",
-      "inviteToRoom": "kutsu ruumi"
-    },
+    "inviteButton": { "invited": "kutsutud", "inviteToRoom": "kutsu ruumi" },
     "micPermissionBanner": {
       "permissionDenied": "Luba keelatud, proovime juurde pääseda teie mikrofonile (võib-olla peate vaatama brauseri seadeid ning lehte värskendama)",
       "dismiss": "tühista",
@@ -139,9 +133,7 @@
     "userVolumeSlider": {
       "noAudioMessage": "pole ühtegi audiotarbijat mingil põhjusel"
     },
-    "addToCalendar": {
-      "add": "Lisa kalendrisse"
-    },
+    "addToCalendar": { "add": "Lisa kalendrisse" },
     "wsKilled": {
       "description": "Veebipesa tapeti serveri poolt. Seda juhtub tavaliselt siis, kui avate veebilehe teisel vahelehel.",
       "reconnect": "ühenda uuesti"
@@ -183,7 +175,8 @@
         "banFromChat": "bänni vestlusest",
         "banFromRoom": "bänni ruumist",
         "goBackToListener": "mine tagasi kuulajatesse",
-        "deleteMessage": "kustuta see sõnum"
+        "deleteMessage": "kustuta see sõnum",
+        "makeRoomCreator": "make room admin"
       },
       "roomSettingsModal": {
         "requirePermission": "taotle luba rääkimiseks",
@@ -204,7 +197,8 @@
       "modal": {
         "needsFuture": "peab olema tulevikus",
         "roomName": "ruumi nimi",
-        "minLength": "min. pikkus 2"
+        "minLength": "min. pikkus 2",
+        "roomDescription": "Description"
       }
     },
     "roomChat": {
@@ -219,6 +213,18 @@
       "whisper": "Sosista",
       "welcomeMessage": "Tere tulemast vestlusesse!",
       "roomDescription": "ruumi kirjeldus"
+    },
+    "roomStatus": {
+      "fuelingRocket": "Fueling rocket",
+      "takingOff": "Taking off",
+      "inSpace": "In space",
+      "approachingMoon": "Approaching moon",
+      "lunarDoge": "Lunar doge",
+      "approachingSun": "Approaching sun",
+      "solarDoge": "Solar doge",
+      "approachingGalaxy": "Approaching galaxy",
+      "galacticDoge": "Galactic Doge",
+      "spottedLife": "Planet with life spotted"
     }
   }
 }

@@ -37,7 +37,7 @@
       "startPrivateRoom": "załóż z nim prywatny pokój"
     },
     "followList": {},
-    "home": { "createRoom": "Stwórz pokój" },
+    "home": { "createRoom": "Stwórz pokój", "refresh": "Refresh" },
     "inviteList": {
       "roomGone": "pokój usunięty, wróć",
       "shareRoomLink": "udostępnij link do pokoju",
@@ -110,7 +110,8 @@
       "makeRoomPublicBtn": "Upublicznij pokój!",
       "settings": "Ustawienia",
       "speaker": "Mówiący",
-      "listener": "Słuchacz"
+      "listener": "Słuchacz",
+      "chat": "Chat"
     },
     "deviceNotSupported": {
       "notSupported": "Twoje urządzenie nie jest obecnie wspierane. Możesz zgłosić to",
@@ -177,7 +178,8 @@
         "banFromChat": "zbanuj z chatu",
         "banFromRoom": "zbanuj z pokoju",
         "goBackToListener": "powróć do słuchacza",
-        "deleteMessage": "usuń tą wiadomość"
+        "deleteMessage": "usuń tą wiadomość",
+        "makeRoomCreator": "make room admin"
       },
       "roomSettingsModal": {
         "requirePermission": "wymaga pozwolenia na mówienie",
@@ -198,7 +200,8 @@
       "modal": {
         "needsFuture": "musi być w przyszłości",
         "roomName": "nazwa pokoju",
-        "minLength": "minimalna długość to 2"
+        "minLength": "minimalna długość to 2",
+        "roomDescription": "Description"
       }
     },
     "roomChat": {
@@ -213,6 +216,18 @@
       "whisper": "Szeptaj",
       "welcomeMessage": "Witaj w chacie!",
       "roomDescription": "opis pokoju"
+    },
+    "roomStatus": {
+      "fuelingRocket": "Fueling rocket",
+      "takingOff": "Taking off",
+      "inSpace": "In space",
+      "approachingMoon": "Approaching moon",
+      "lunarDoge": "Lunar doge",
+      "approachingSun": "Approaching sun",
+      "solarDoge": "Solar doge",
+      "approachingGalaxy": "Approaching galaxy",
+      "galacticDoge": "Galactic Doge",
+      "spottedLife": "Planet with life spotted"
     }
   }
 }
