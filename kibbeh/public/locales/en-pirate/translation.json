@@ -7,15 +7,16 @@
     "ok": "ok",
     "yes": "aye",
     "no": "nay",
-    "cancel": "cancel",
+    "cancel": "Abandon ship!",
     "save": "save",
     "edit": "edit",
-    "delete": "delete",
+    "delete": "Blow The Man Down!",
     "joinRoom": "join cabin",
     "copyLink": "copy link",
     "copied": "copied",
     "formattedIntlDate": "{{date, intlDate}}",
-    "formattedIntlTime": "{{time, intlTime}}"
+    "formattedIntlTime": "{{time, intlTime}}",
+    "requestPermissions": "Please note running DogeHouse without accessibility permissions may cause unwanted errors"
   },
   "header": {
     "_comment": "Main Header UI Internationalization Strings",
@@ -36,8 +37,12 @@
       "currentRoom": "currently in:",
       "startPrivateRoom": "start a private cabin wit' 'em"
     },
-    "followList": {},
-    "home": { "createRoom": "Create Cabin", "refresh": "Refresh" },
+    "followList": { "followHim": "follow", "followingHim": "following" },
+    "home": {
+      "createRoom": "Create Cabin",
+      "refresh": "Refresh",
+      "editRoom": "Edit Room"
+    },
     "inviteList": {
       "roomGone": "cabin gone, go back",
       "shareRoomLink": "share link t' cabin",
@@ -45,41 +50,50 @@
       "whenFollowersOnline": "When yer scallywags are online, they will show up here."
     },
     "login": {
-      "headerText": "Takin' voice natters t' the moon 🚀",
+      "headerText": "Takin' voice natters t' the open sea 🌊",
       "featureText_1": "Dark Theme",
       "featureText_2": "Open Sign-Ups",
       "featureText_3": "Cross-Platform Support",
       "featureText_4": "Open Source",
       "featureText_5": "Text Chat",
       "featureText_6": "Powered by Doge",
-      "loginGithub": "login with GitHub",
-      "loginTwitter": "login with Twitter",
-      "createTestUser": "create test user"
+      "loginGithub": "Set Sail wit' with GitHub",
+      "loginTwitter": "Set Sail wit' Twitter",
+      "createTestUser": "Set Sail wit' a Test User"
     },
     "myProfile": {
-      "logout": "logout",
+      "logout": "Walk the plank!",
       "probablyLoading": "prolly loadin'...",
       "voiceSettings": "go t' voice settings",
       "soundSettings": "go t' sound settings",
-      "deleteAccount": "scuttle account"
+      "deleteAccount": "Cleave Him to the Brisket!",
+      "overlaySettings": "go t' overlay settings",
+      "couldNotFindUser": "Sorry, we could not find that user"
     },
     "notFound": {
       "whoopsError": "Blast ye! This page got lost in natter.",
       "goHomeMessage": "Nah t' worry. Ye can",
-      "goHomeLinkText": "go home"
+      "goHomeLinkText": "Davy Jones' Locker"
     },
     "room": {
-      "speakers": "Speakers",
+      "speakers": "Crew",
       "requestingToSpeak": "Requestin' t' speak",
-      "listeners": "Listeners"
+      "listeners": "Shipmates",
+      "allowAll": "Allow all",
+      "allowAllConfirm": "Ye sure? Ye will allow all {{count}} skallywags to speak!"
     },
     "searchUser": { "search": "searchin' fer booty..." },
     "soundEffectSettings": { "header": "Sounds" },
     "viewUser": {
-      "editProfile": "edit profile",
+      "editProfile": "avast ye profile",
       "followsYou": "follows you",
       "followers": "scallywags",
-      "following": "following"
+      "following": "hearties",
+      "followHim": "follow",
+      "followingHim": "following",
+      "copyProfileUrl": "Copy profile url",
+      "urlCopied": "URL copied to clipboard",
+      "unfollow": "Unfollow"
     },
     "voiceSettings": {
       "header": "Voice Settings",
@@ -87,6 +101,10 @@
       "permissionError": "no mics found, ye either 'ave none plugged in or haven't given this website permission.",
       "refresh": "refresh mic list",
       "volume": "volume:"
+    },
+    "overlaySettings": {
+      "input": { "errorMsg": "Invalid app title", "label": "Enter App Title" },
+      "header": "Overlay Settings"
     }
   },
   "components": {
@@ -94,22 +112,22 @@
     "avatar": {},
     "backBar": {},
     "blockedFromRoomUsers": {
-      "header": "Banned Users",
-      "unban": "unban",
-      "noBans": "no one has been banned yet"
+      "header": "People who 'ave walked eh plank",
+      "unban": "save 'em from the o'en seas",
+      "noBans": "no one has walked the plank yet"
     },
     "bottomVoiceControl": {
-      "leaveCurrentRoomBtn": "Leave current cabin",
+      "leaveCurrentRoomBtn": "Weigh anchor",
       "confirmLeaveRoom": "Are ye sure ye wants t' weigh anchor?",
       "leave": "Weigh anchor",
       "inviteUsersToRoomBtn": "Invite scallywags t' cabin",
-      "invite": "Invite",
+      "invite": "Invite scallywags",
       "toggleMuteMicBtn": "Toggle mute microphone",
-      "mute": "Mute",
+      "mute": "Belay yer mouth!",
       "unmute": "Unmute",
-      "makeRoomPublicBtn": "Make cabin public!",
+      "makeRoomPublicBtn": "Make cabin a'ilable to eh o'en seas!",
       "settings": "Settings",
-      "speaker": "Speaker",
+      "speaker": "Captain",
       "listener": "Listener",
       "chat": "Chat"
     },
@@ -128,7 +146,8 @@
       "setKeybind": "set keybind",
       "listening": "listening",
       "toggleMuteKeybind": "toggle mute keybind",
-      "togglePushToTalkKeybind": "toggle push-t'-natter keybind"
+      "togglePushToTalkKeybind": "toggle push-t'-natter keybind",
+      "toggleOverlayKeybind": "toggle overlay keybind"
     },
     "userVolumeSlider": {
       "noAudioMessage": "no audio consumer fer some reason"
@@ -167,20 +186,23 @@
       },
       "profileModal": {
         "blockUserConfirm": "Are ye sure ye wants t' block this user from joinin' any cabin ye ever create?",
-        "blockUser": "block user",
-        "makeMod": "make mod",
-        "unmod": "unmod",
-        "addAsSpeaker": "add as speaker",
-        "moveToListener": "move t' listener",
-        "banFromChat": "ban from chat",
-        "banFromRoom": "ban from cabin",
-        "goBackToListener": "go back t' listener",
-        "deleteMessage": "scuttle this message"
+        "blockUser": "Block User",
+        "makeMod": "Make Mod",
+        "unmod": "Unmod",
+        "addAsSpeaker": "Add to crew",
+        "moveToListener": "move t' shipmate",
+        "banFromChat": "Ban from chat",
+        "banFromRoom": "Ban from cabin",
+        "goBackToListener": "Go back t' shipmate",
+        "deleteMessage": "Scuttle this message",
+        "makeRoomCreator": "Make cabin cap'n"
       },
       "roomSettingsModal": {
-        "requirePermission": "require permission t' speak",
-        "makePublic": "make cabin public",
-        "makePrivate": "make cabin private"
+        "requirePermission": "Require permission t' speak",
+        "makePublic": "Make Cabin Public",
+        "makePrivate": "Make Cabin Private",
+        "renamePublic": "Set Public Cabin Name",
+        "renamePrivate": "Set Private Cabin Name"
       }
     }
   },
@@ -222,7 +244,7 @@
       "approachingSun": "Approachin' sun",
       "solarDoge": "Solar doge",
       "approachingGalaxy": "Approachin' galaxy",
-      "galacticDoge": "Galactic Doge",
+      "galacticDoge": "Galactic doge been spotted",
       "spottedLife": "Planet wit' life spotted"
     }
   }

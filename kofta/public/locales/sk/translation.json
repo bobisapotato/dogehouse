@@ -14,7 +14,8 @@
     "copyLink": "skopírovať odkaz",
     "copied": "skopírováné",
     "formattedIntlDate": "{{date, intlDate}}",
-    "formattedIntlTime": "{{time, intlTime}}"
+    "formattedIntlTime": "{{time, intlTime}}",
+    "requestPermissions": "Spúštanie DogeHose-u bez prístupových oprávnení môže spôsobovať nečakané chyby"
   },
   "header": {
     "_comment": "Main Header UI Internationalization Strings",
@@ -35,8 +36,12 @@
       "currentRoom": "aktuálne v:",
       "startPrivateRoom": "začať s nimi súkromnú miestnosť"
     },
-    "followList": {},
-    "home": { "createRoom": "Vytvoriť miestnosť", "refresh": "Obnoviť" },
+    "followList": { "followHim": "Sledovať", "followingHim": "Sledovaný" },
+    "home": {
+      "createRoom": "Vytvoriť miestnosť",
+      "refresh": "Obnoviť",
+      "editRoom": "Upraviť Miestnosť"
+    },
     "inviteList": {
       "roomGone": "miestnosť je fuč, vráť sa",
       "shareRoomLink": "zdieľať odkaz miestnosti",
@@ -51,8 +56,8 @@
       "featureText_4": "Open Source",
       "featureText_5": "Textový chat",
       "featureText_6": "Powered by Doge",
-      "loginGithub": "prihlásiť se cez GitHub",
-      "loginTwitter": "prihlásiť se cez Twitter",
+      "loginGithub": "prihlásiť sa cez GitHub",
+      "loginTwitter": "prihlásiť sa cez Twitter",
       "createTestUser": "vytvoriť testovacieho používateľa"
     },
     "myProfile": {
@@ -60,7 +65,8 @@
       "probablyLoading": "zrejme načítam...",
       "voiceSettings": "otvoriť nastavenia hlasu",
       "soundSettings": "otvoriť nastavenia zvuku",
-      "deleteAccount": "odstrániť účet"
+      "deleteAccount": "odstrániť účet",
+      "overlaySettings": "otvoriť nastavenia prekresľovania"
     },
     "notFound": {
       "whoopsError": "Uups! Táto stránka sa stratila v konverzácii.",
@@ -70,7 +76,9 @@
     "room": {
       "speakers": "Rozprávači",
       "requestingToSpeak": "Chce povolenie rozprávať",
-      "listeners": "Poslucháči"
+      "listeners": "Poslucháči",
+      "allowAll": "Povoliť rozprávať všetkým",
+      "allowAllConfirm": "Si si istý? Povolíš rozprávať všetkým {{count}} žiadateľom"
     },
     "searchUser": { "search": "hľadať..." },
     "soundEffectSettings": { "header": "Zvuky" },
@@ -78,7 +86,12 @@
       "editProfile": "upraviť profil",
       "followsYou": "sleduje ťa",
       "followers": "sledovateľov",
-      "following": "sledovaných"
+      "following": "sledovaných",
+      "followHim": "sledovať",
+      "followingHim": "sledovaný",
+      "copyProfileUrl": "skopírovať url profilu",
+      "urlCopied": "URL skopírované do schránky",
+      "unfollow": "Zrušiť sledovanie"
     },
     "voiceSettings": {
       "header": "Nastavenia hlasu",
@@ -86,6 +99,13 @@
       "permissionError": "žiadne mikrofóny nenájdené, buď žiaden nie je zapojený alebo si neudelil stránke oprávnenie.",
       "refresh": "obnoviť zoznam mikrofónov",
       "volume": "hlasitosť:"
+    },
+    "overlaySettings": {
+      "input": {
+        "errorMsg": "Nesprávny názov aplikácie",
+        "label": "Vlož názov aplikácie"
+      },
+      "header": "Nastavenia Prekresľovania"
     }
   },
   "components": {
@@ -130,7 +150,8 @@
       "setKeybind": "nastaviť klávesovú skratku",
       "listening": "počúvam",
       "toggleMuteKeybind": "prepínač stíšenia",
-      "togglePushToTalkKeybind": "prepínač push-to-talk"
+      "togglePushToTalkKeybind": "prepínač push-to-talk",
+      "toggleOverlayKeybind": "prepínač prekreslenia"
     },
     "userVolumeSlider": {
       "noAudioMessage": "z nejakého dôvodu nemáme žiadny zvuk"
@@ -183,7 +204,9 @@
       "roomSettingsModal": {
         "requirePermission": "Poslucháči musia požiadať o povolenie rozprávať",
         "makePublic": "zverejniť miestnosť",
-        "makePrivate": "zosúkromniť miestnosť"
+        "makePrivate": "zosúkromniť miestnosť",
+        "renamePublic": "Nastaviť meno verejnej miestnosti",
+        "renamePrivate": "Nastaviť meno súkromnej miestnosti"
       }
     }
   },
@@ -212,7 +235,7 @@
       "searchResults": "Výsledky vyhľadávania",
       "recent": "Často používané",
       "sendMessage": "Odoslať správu",
-      "whisper": "Pošepkať",
+      "whisper": "Šepot",
       "welcomeMessage": "Vitaj v chate!",
       "roomDescription": "popis miestnosti"
     },

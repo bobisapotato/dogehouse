@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Redirect, useRouteMatch } from "react-router-dom";
 import { wsend } from "../../createWebsocket";
 import { useCurrentRoomStore } from "../../webrtc/stores/useCurrentRoomStore";
@@ -18,12 +18,20 @@ import { Wrapper } from "../components/Wrapper";
 import { useShouldFullscreenChat } from "../modules/room-chat/useShouldFullscreenChat";
 import { Codicon } from "../svgs/Codicon";
 import { BaseUser } from "../types";
-import { isUuid } from "../utils/isUuid";
+import { validate as uuidValidate } from 'uuid';
 import { useTimeElapsed } from "../utils/timeElapsed";
 import { useMeQuery } from "../utils/useMeQuery";
 import { useTypeSafeTranslation } from "../utils/useTypeSafeTranslation";
+import isElectron from "is-electron";
 
-interface RoomPageProps {}
+let ipcRenderer: any = undefined;
+if (isElectron()) {
+  ipcRenderer = window.require("electron").ipcRenderer;
+}
+
+const isMac = process.platform === "darwin";
+
+interface RoomPageProps { }
 
 export const RoomPage: React.FC<RoomPageProps> = () => {
   const {
@@ -50,6 +58,16 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
   const [listenersPage, setListenersPage] = useState(1);
   const pageSize = 25;
   const { t } = useTypeSafeTranslation();
+
+  useEffect(() => {
+    if (isElectron()) {
+      ipcRenderer.send("@room/data", {
+        currentRoom: room,
+        me: me
+      });
+    }
+  });
+
   // useEffect(() => {
   //   if (room?.users.length) {
   //     setUserProfileId(room.users[0].id);
@@ -57,7 +75,7 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
   //   }
   // }, []);
 
-  if (!isUuid(id)) {
+  if (!uuidValidate(id)) {
     return <Redirect to="/" />;
   }
 
@@ -73,7 +91,6 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
   }
 
   const profile = room.users.find((x) => x.id === userProfileId);
-
   const speakers: BaseUser[] = [];
   const unansweredHands: BaseUser[] = [];
   const listeners: BaseUser[] = [];
@@ -91,8 +108,20 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
   });
 
   const listenersShown = listeners.slice(0, listenersPage * pageSize);
+
+  const allowAllRequestingSpeakers = () => {
+    unansweredHands.forEach((user) => {
+      wsend({
+        op: "add_speaker",
+        d: {
+          userId: user.id,
+        },
+      });
+    });
+  };
+
   return (
-    <>
+    <div id={room.isPrivate ? "private-room" : "public-room"}>
       <ProfileModal
         iAmCreator={iAmCreator}
         iAmMod={iAmMod}
@@ -103,7 +132,7 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
       />
       {fullscreenChatOpen ? null : (
         <Backbar>
-          <div className={`flex flex-col justify-center w-full`}>
+          <div className={`flex flex-col justify-center w-9/12`}>
             <button
               disabled={!iAmCreator}
               onClick={() => setShowCreateRoomModal(true)}
@@ -161,8 +190,26 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
               </div>
             ) : null}
             {unansweredHands.length ? (
-              <div className={`col-span-full text-xl ml-2.5 text-white`}>
-                {t("pages.room.requestingToSpeak")} ({unansweredHands.length})
+              <div className={`flex col-span-full text-xl ml-2.5 text-white`}>
+                <span className={`my-auto`}>
+                  {t("pages.room.requestingToSpeak")} ({unansweredHands.length})
+                </span>
+                {(iAmCreator || iAmMod) && (
+                  <Button
+                    className={`ml-4`}
+                    variant={`small`}
+                    onClick={() => {
+                      modalConfirm(
+                        t("pages.room.allowAllConfirm", {
+                          count: unansweredHands.length,
+                        }),
+                        allowAllRequestingSpeakers
+                      );
+                    }}
+                  >
+                    {t("pages.room.allowAll")}
+                  </Button>
+                )}
               </div>
             ) : null}
             {unansweredHands.map((u) => (
@@ -219,6 +266,6 @@ export const RoomPage: React.FC<RoomPageProps> = () => {
           edit={true}
         />
       ) : null}
-    </>
+    </div>
   );
 };

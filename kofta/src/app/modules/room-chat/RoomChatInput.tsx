@@ -14,6 +14,7 @@ import { useTypeSafeTranslation } from "../../utils/useTypeSafeTranslation";
 import { customEmojis, CustomEmote } from "./EmoteData";
 import { useRoomChatMentionStore } from "./useRoomChatMentionStore";
 import { useRoomChatStore } from "./useRoomChatStore";
+import { useShouldBeSidebar } from "./useShouldFullscreenChat";
 
 interface ChatInputProps {}
 
@@ -33,20 +34,21 @@ export const RoomChatInput: React.FC<ChatInputProps> = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [lastMessageTimestamp, setLastMessageTimestamp] = useState<number>(0);
   const { t } = useTypeSafeTranslation();
+  const chatIsSidebar = useShouldBeSidebar();
 
   let position: number = 0;
 
   const navigateThroughQueriedUsers = (e: any) => {
     // Use dom method, GlobalHotkeys apparently don't catch arrow-key events on inputs
     if (
-      !["ArrowUp", "ArrowDown", "Enter"].includes(e.code) ||
+      !["ArrowUp", "ArrowDown", "Enter", "Tab"].includes(e.code) ||
       !queriedUsernames.length
     )
       return;
 
     e.preventDefault();
 
-    let changeToIndex = null;
+    let changeToIndex: number | null = null;
     const activeIndex = queriedUsernames.findIndex(
       (username) => username.id === activeUsername
     );
@@ -57,7 +59,7 @@ export const RoomChatInput: React.FC<ChatInputProps> = () => {
     } else if (e.code === "ArrowDown") {
       changeToIndex =
         activeIndex === queriedUsernames.length - 1 ? 0 : activeIndex + 1;
-    } else if (e.code === "Enter") {
+    } else if (e.code === "Enter" || e.code === "Tab") {
       const selected = queriedUsernames[activeIndex];
       setMentions([...mentions, selected]);
       setMessage(
@@ -207,14 +209,15 @@ export const RoomChatInput: React.FC<ChatInputProps> = () => {
         </div>
 
         {/* Send button (mobile only) */}
-        <Button
-          onClick={handleSubmit}
-          variant="small"
-          className="lg:hidden"
-          style={{ padding: "10px 12px" }}
-        >
-          <Codicon name="arrowRight" />
-        </Button>
+        {chatIsSidebar ? null : (
+          <Button
+            onClick={handleSubmit}
+            variant="small"
+            style={{ padding: "10px 12px" }}
+          >
+            <Codicon name="arrowRight" />
+          </Button>
+        )}
       </div>
     </form>
   );
